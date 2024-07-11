@@ -1,0 +1,16 @@
+{% extends "dashboard/index.html" %}
+
+{% block title %}Добавить доход{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h3>Добавить доход</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.name }}<br>
+        {{ form.sum }}<br>
+        <button class="btn btn-primary btn-lg" type="submit">Добавить доход</button>
+        <p style="color: red;">{{ error }}</p>
+    </form>
+</div>
+{% endblock %}

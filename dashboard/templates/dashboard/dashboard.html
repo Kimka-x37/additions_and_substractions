@@ -1,0 +1,25 @@
+{% extends "dashboard/index.html" %}
+
+{% block title %}Доходы и расходы{% endblock %}
+
+{% block main %}
+<h4>Сумма:{{ sum }}</h4>
+<br>
+{% for el in transactions %}
+    {% if el.substraction %}
+        <div class="transaction" style="float: right;color: red;">
+            <h5>{{ el.name }}:<h5>
+            <h5>{{ el.sum }}<h5>
+        </div>
+    {% else %}
+        <div class="transaction" style="float: left;color: green;">
+            <h5>{{ el.name }}:<h5>
+            <h5>+{{ el.sum }}<h5>
+        </div>
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <br>
+{% endfor %}
+{% endblock %}
