@@ -5,8 +5,12 @@
 {% block main %}
     <form class="container" method="post">
         {% csrf_token %}
+        Ник:<br>
         {{ form.username }}<br>
-        {{ form.password }}<br>
+        Пароль:<br>
+        {{ form.password1 }}<br>
+        Повтор пароля:<br>
+        {{ form.password2 }}<br>
         <button class="btn btn-primary" type="submit">Зарегистрироваться!</button>
         <p style="color: red;">{{ error }}</p>
     </form>
