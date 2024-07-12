@@ -8,7 +8,7 @@ from .forms import *
 def dashboard(request):
     username = request.user.username
     transactions = Transaction.objects.filter(autor = username)
-    transactions_sum = sum(Transaction.objects.values_list('sum', flat=True))
+    transactions_sum = sum(transactions.values_list('sum', flat=True))
 
     return render(request, 'dashboard/dashboard.html', {
         'username': username, 
@@ -71,7 +71,7 @@ def substractions(request):
 def delete_page(request):
     username  = request.user.username
     transactions = Transaction.objects.filter(autor = username)
-    transactions_sum = sum(Transaction.objects.values_list('sum', flat=True))
+    transactions_sum = sum(transactions.values_list('sum', flat=True))
 
     return render(request, 'dashboard/delete.html', {
         'transactions':transactions, 
