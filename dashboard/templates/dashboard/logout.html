@@ -1,0 +1,11 @@
+{% extends "dashboard/index.html" %}
+
+{% block title %}Выход из аккаунта{% endblock %}
+
+{% block main %}
+<div class="container">
+    <h3>Вы точно хотите выйти?<br>
+    <a href="{% url 'logout' %}" class="btn btn-primary">Да</a>
+    <a href="{% url 'dashboard' %}" class="btn btn-primary">Нет</a>
+</div>
+{% endblock %}

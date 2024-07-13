@@ -16,6 +16,10 @@ def dashboard(request):
         'sum':transactions_sum})
 
 @login_required(login_url='home')
+def logout_page(request):
+    return render(request, 'dashboard/logout.html')
+
+@login_required(login_url='home')
 def logout_view(request):
     logout(request)
     return redirect('home')
